@@ -4,13 +4,31 @@ exam-viewer用の集計プログラム
 
 特定ディレクトリ配下にある複数のテスト結果を纏めたファイルを生成する
 
-## usage
+## Requirements
+
+- git 2.34.1
+- go 1.19
+
+## Build
 
 ```bash
-command [-r regexp] [-i file] [-d] [-o file] filepath
+git clone https://github.com/okapon1210/exam-digest.git
+cd exam-digest
+go build -o exd main.go
 ```
 
-## option
+x64のwindows向けにビルドする場合は最後の行を以下に変更する
+```bash
+GOOS=windows GOARCH=amd64 go build -o exd.exe main.go
+```
+
+## Usage
+
+```bash
+exd [-r regexp] [-i file] [-d] [-o file] filepath
+```
+
+## Option
 
 ### -r
 
